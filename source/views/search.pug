@@ -1,0 +1,109 @@
+//- extends layout to your side
+extends layout/layout
+
+block var
+	- subPage = "wanderlust-search";
+	- title = "Search page";
+block content
+	section.hero-section(data-parallax="scroll" data-image-src="images/search-bg.jpg")
+		.container.hero-inner
+			h1 Search Results
+			strong.sub-title Add your search result page title & sub title.
+			ol.breadcrumb
+				li
+					a(href="#") Home
+				li.active SEARCH
+	section.content-block.feature-section.grey-bg
+		.container-fluid
+			.row
+				// Start Filter Sidebar
+				aside.col-lg-3.col-md-4.col-sm-4.col-xs-12
+					.filter-sidebar
+						header: h3 <i class="icon-filter"></i>FILTER
+						.panel-group(id="filterAccordion" role="tablist" aria-multiselectable="true")
+							mixin panelFilterItem(active, headerId, bodyId, content)
+								.panel
+									.panel-heading(role="tab" id=headerId)
+										a(role="button", data-toggle="collapse", data-parent="#accordion", href="#" + bodyId, aria-expanded=active, aria-controls=bodyId)
+											h4= content
+									.panel-collapse.collapse(role="tabpanel", aria-labelledby=headerId, id=bodyId)&attributes(attributes)
+										.panel-body
+											block
+							+panelFilterItem("true", "headingFilterOne", "collapseFilterOne", "Select Region").in
+								ul.region-list.vertical-list
+									li: a(href="#") <i class="icon-africa"></i> Africa
+									li: a(href="#") <i class="icon-asia"></i> Asia
+									li: a(href="#") <i class="icon-europe"></i> Europe
+									li: a(href="#") <i class="icon-world"></i> World
+							// End Filter
+
+							+panelFilterItem("true", "headingFilterTwo", "collapseFilterTwo", "Activity Theme").in
+								ul.activity-list.horizontal-list
+									li: a(data-toggle="tooltip", href="#", title="Beach") <i class="icon-foot-step"></i>
+									li: a(data-toggle="tooltip", href="#", title="Bungee Jump") <i class="icon-bungee"></i> 
+									li: a(data-toggle="tooltip", href="#", title="City Tours") <i class="icon-eiffel"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Cycling") <i class="icon-mountain-biking"></i>
+									li: a(data-toggle="tooltip", href="#", title="Desert") <i class="icon-desert"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Hiking Trips") <i class="icon-hiking-camping"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Hunting Trip") <i class="icon-hunting"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Iconic") <i class="icon-urban"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Jungle") <i class="icon-jungle"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Mountain") <i class="icon-mount"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Safari") <i class="icon-wildlife"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Scuba Diving") <i class="icon-scuba-diving"></i> 
+							// End Filter
+
+							+panelFilterItem("true", "headingFilterThree", "collapseFilterThree", "Activity Level").in
+								ul.activity-list.horizontal-list
+									li: a(data-toggle="tooltip", href="#", title="Leisurely") <i class="icon-level1"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Fairly Easy") <i class="icon-level2"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Moderate") <i class="icon-level3"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Strenuous") <i class="icon-level4"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Challenging") <i class="icon-level5"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Tough") <i class="icon-level6"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Extreme") <i class="icon-level7"></i> 
+									li: a(data-toggle="tooltip", href="#", title="Ultimate") <i class="icon-level8"></i> 
+							// End Filter
+
+							+panelFilterItem("true", "headingFilterFour", "collapseFilterFour", "Price Range").in
+								#slider_filter_price
+								input(type="text" read-only).price-input
+								button.button-default.filter_price_range Filter
+							// End Filter
+
+							+panelFilterItem("true", "headingFilterFive", "collapseFilterFive", "Community Poll").in
+								strong Paradise on Earth?
+								ul.check-list
+									mixin customRadio(id, text)
+										li: label(for=id).custom-radio
+											input(type="radio", name="questionaire", value="", id=id)
+											span.check-input
+											span.check-label= text
+									+customRadio("radio1", "Kashmir - India")
+									+customRadio("radio2", "Mt. Everest - Nepal")
+									+customRadio("radio3", "Stone Henge - UK")
+									+customRadio("radio4", "My Home")
+							// End Filter
+
+				.col-lg-9.col-md-8.col-sm-8.col-xs-12
+					.filter-option.clearfix
+						strong.result-info 12 TRIPS MATCHES YOUR SEARCH CRITERIA
+						.filter-action
+							
+							.filter_by_order
+								select#filter_by_order(data-selectCustom)
+									option(value="sort") Sort order
+									option(value="alphabet") Alphabet
+									option(value="price") Price
+									option(value="popularity") Popular
+									option(value="date") Recent
+							.filter_by_layout
+								a(href="#")#layout-list: i.icon-list
+								a(href="#")#layout-grid.active: i.icon-grid
+					.search-container
+						.row
+							+postIemSearch("images/img01-550x358.jpg")
+							+postIemSearch("images/img01-550x358.jpg")
+							+postIemSearch("images/img01-550x358.jpg")
+						
+						a(href="#").button-default.button-more LOAD MORE

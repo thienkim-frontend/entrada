@@ -25,10 +25,7 @@ jQuery(document).ready(function ($) {
       $(wrapperEl + " " +titleEl).eq(0).addClass("active");
     }
   }
-
-  // jquery ui tooltip conflict with bootstrap 3 tooltip => An easy way is to load bootstrap.js after jquery-ui.js, so that the bootstrap .tooltip overrides jquery UI's.
 	$('[data-toggle="tooltip"]').tooltip(); 
-
 	$("[data-fancybox]").fancybox({
 		// Try to focus on the first focusable element after opening
     autoFocus : false,

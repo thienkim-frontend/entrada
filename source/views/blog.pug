@@ -1,0 +1,346 @@
+//- extends layout to your side
+extends layout/layout
+
+block var
+	- subPage = "has-grey-header wanderlust-detail-post";
+	- title = "Blog page";
+block content
+	// Start main-content section
+	section.feature-wrapper.container-fluid
+		.row.vertical-centered-columns
+			.col-md-6.col-sm-12.col-xs-12
+				.feature-slider.owl-carousel.is-simple-carousel
+					.slider-item(style="background-image: url(./images/post-detail-bg.jpg)")
+					.slider-item(style="background-image: url(./images/post-detail-bg2.jpg)")
+			.col-md-6.col-sm-12.col-xs-12
+				.tour-info-wrapper
+					.content-wrapper
+						h1 Mountain Biking Trip
+						.price from <br/>
+							del.old-price $799
+							span.discounted-price $599
+						.description
+							p Son agreed others exeter period myself few yet nature. Mention mr manners opinion if garrets enabled. To an occasional dissimilar impossible sentiments.
+						ul.review-block
+							li
+								.info-left
+									strong.title Reviews
+									span.value 1 Review
+								.info-right
+									.star-rating
+										i.icon-star
+										i.icon-star
+										i.icon-star
+										i.icon-star
+										i.icon-star
+									span.value 5/5
+							li
+								.info-left
+									strong.title Vacation Style
+									span.value: strong Holiday Type
+								.info-right
+									.icons-list
+										i(title="Europe", data-toggle="tooltip").icon-europe
+										i(title="Mountain", data-toggle="tooltip").icon-mountain
+										i(title="Mountain-biking", data-toggle="tooltip").icon-mountain-biking
+									span.value Children, Family
+							li
+								.info-left
+									strong.title Activity Level
+									span.value Extreme
+								.info-right
+									.icons-list
+										i(title="Europe", data-toggle="tooltip").icon-level7
+									span.value 7/8
+							li
+								.info-left
+									strong.title Group Size
+									span.value Large Group
+								.info-right
+									.icons-list
+										i(title="Europe", data-toggle="tooltip").icon-group-large
+									span.value 16
+						a(href="#").button-lg Book Now	
+						.social-networks
+							a(href="#", title="Facebook") 
+								i.icon-facebook
+								span.text Facebook
+							a(href="#", title="Twitter") 
+								i.icon-twitter
+								span.text Twitter
+							a(href="#", title="Google plus")
+								i.icon-google-plus
+								span.text Google plus
+							a(href="#", title="Pinterest") 
+								i.icon-pin
+								span.text Pinterest
+				// End Main Post
+
+	section.addition-info-wrapper
+		.nav-tabs-wrapper.is-fixed-nav
+			.container
+				// Nav tabs
+				ul.nav.nav-tabs(role="tablist")
+					li.active(role="presentation")
+						a(href="#overview", aria-controls="overview", role="tab", data-toggle="tab") Overview
+					li(role="presentation")
+						a(href="#itinerary", aria-controls="itinerary", role="tab", data-toggle="tab") Itinerary
+					li(role="presentation")
+						a(href="#accomodation", aria-controls="accomodation", role="tab", data-toggle="tab") Accomodation
+					li(role="presentation")
+						a(href="#faqs", aria-controls="faqs", role="tab", data-toggle="tab") FAQs & Reviews
+					li(role="presentation")
+						a(href="#gallery", aria-controls="gallery", role="tab", data-toggle="tab") Gallery
+		// Tab panes
+		.tab-content.container.content-block
+			#overview.tab-pane.active(role="tabpanel")
+				.row
+					.col-md-6.col-sm-6.col-xs-12
+						.box-title
+							h4 All about the Mountain Hiking Tour.
+						.box-content
+							p This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+							p Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
+							p Sed non mauris vitae;erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.
+							p Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.
+							p Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam.
+							p Ulins aliquam massa nisl quis neque. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque.
+							p Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam.
+							p Ulins aliquam massa nisl quis neque. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque.
+							p Ulins aliquam massa nisl quis neque. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque.
+							p Suspendisse gin orci enim.
+					.col-md-6.col-sm-6.col-xs-12
+						.box-title
+							h4 The tour package inclusions and exclusions at a glance
+						.box-info.included-info
+							h3 What is included in this tour?
+							span.sub-title Items that are included in the cost of tour price.
+							p This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+							ul
+								li All breakfasts, lunches and dinners & dining
+								li All accommodation including tea houses en route
+								li All transportation including taxis and coaches
+								li Flights from Heathrow if booked inc. of flight
+								li Tour and trekking guide for entire journey
+						.box-info.not-included-info
+							h3 Whats not included in this tour.
+							span.sub-title Items that are not included in the cost of tour price.
+							p This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+							ul
+								li Travel insurance and other emergencies
+								li Visa fees and entry clearing fees
+								li Single room accommodations
+								li Liquors, beeers and bootled beverages
+								li Photography ccessories like cameras etc.	
+			// End #overview tab panes
+
+			#itinerary.tab-pane(role="tabpanel")
+				.row
+					.col-md-6.col-sm-6.col-xs-12
+						ol.panel-group(id="accordion" role="tablist" aria-multiselectable="true")
+							mixin panelItem(active, headerId, bodyId, content)
+								li(class="panel")
+									.panel-heading(role="tab" id=headerId)
+										a(role="button", data-toggle="collapse", data-parent="#accordion", href="#" + bodyId, aria-expanded=active, aria-controls=bodyId)
+											h4= content[0]
+											span.sub-title= content[1]
+									.panel-collapse.collapse(role="tabpanel", aria-labelledby=headerId, id=bodyId)&attributes(attributes)
+										.panel-body
+											p As collected deficient objection by it discovery sincerity curiosity. Quiet decay who round three world whole has mrs man.Built the china there tried jokes which gay why. Assure in adieus wicket it is. But spoke round point and one joy. Assure in adieus wicket it is.
+
+							+panelItem("true", "headingOne", "collapseOne", ["Day 1", "Arrival at Location"]).in
+							+panelItem("false", "headingTwo", "collapseTwo", ["Day 2", "Cultural Minglings"])
+							+panelItem("false", "headingThree", "collapseThree", ["Day 3", "Scenic Tour of City"])
+							+panelItem("false", "headingFour", "collapseFour", ["Day 4", "Get to Know Country"])
+							+panelItem("false", "headingFive", "collapseFive", ["Day 5", "Ride the Elephant"])
+							+panelItem("false", "headingSix", "collapseSix", ["Day 6", "Discover the Sectrets"])
+							+panelItem("false", "headingSeven", "collapseSeven", ["Day 7", "Wild Adventure Begins"])
+							+panelItem("false", "headingEight", "collapseEight", ["Day 8", "Leave with Memory"])
+
+					.col-md-6.col-sm-6.col-xs-12
+						mixin boxImg(imgUrl)
+							article.box-img
+								.thumbnail-wrapper
+									img(src=imgUrl, alt="").img-responsive
+								.description
+									h3 Memorable Time for All
+									p Save these awesome lifetime memories for life.
+
+						+boxImg("images/post-detail-01.jpg")
+						+boxImg("images/post-detail-01.jpg")
+			// End #itinerary tab panes
+						
+			#accomodation.tab-pane(role="tabpanel")
+				.row
+					.col-md-6.col-sm-6.col-xs-12
+						.box-title
+							h4 Hotels, Tea Houses and Lodges
+						.box-content
+							p This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+							p Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
+							p Sed non mauris vitae;erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.
+							p Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.
+							p Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam.
+							p Ulins aliquam massa nisl quis neque. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque.
+							p Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam.
+							p Ulins aliquam massa nisl quis neque. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque.
+							p Ulins aliquam massa nisl quis neque. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque.
+							p Suspendisse gin orci enim.
+					.col-md-6.col-sm-6.col-xs-12
+						.box-title
+							h4 The tour package inclusions and exclusions at a glance.
+						.box-info.included-info
+							h3 What is included in this tour?
+							span.sub-title Items that are included in the cost of tour price.
+							img(src="images/post-detail-02.jpg", alt="").img-responsive
+						.box-info.not-included-info
+							h3 Whats not included in this tour.
+							span.sub-title Items that are not included in the cost of tour price.
+							p This is Photoshop’s version of Lorem Ipsum. 
+							img(src="images/post-detail-02.jpg", alt="").img-responsive
+			#faqs.tab-pane(role="tabpanel")
+				.row
+					.col-md-6.col-sm-6.col-xs-12
+						.box-title.has-select
+							label(for="select-region").sr-only Select region
+							select(name="select-region", data-selectCustom).form-control#select-region
+								option(value="#faq-tab1") What kind of footwear is most suitable?
+								option(value="#faq-tab2")  Can I bring Alcohol to this trip?
+								option(value="#faq-tab3")  Can I bring my Pet to this Tour?
+						.box-content
+							// Nav tabs
+							ul.nav.nav-tabs(role="tablist").hidden#faq-tab
+								li.active(role="presentation")
+									a(href="#faq-tab1", aria-controls="faq-tab1", role="tab", data-toggle="tab") What kind of footwear is most suitable?
+								li(role="presentation")
+									a(href="#faq-tab2", aria-controls="faq-tab2", role="tab", data-toggle="tab") Can I bring Alcohol to this trip?
+								li(role="presentation")
+									a(href="#faq-tab3", aria-controls="faq-tab3", role="tab", data-toggle="tab") Can I bring my Pet to this Tour?
+							// Tab panes
+							.tab-content
+								#faq-tab1.tab-pane.active(role="tabpanel")
+									p This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+									p Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
+									p Sed non mauris vitae;erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.
+									p Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.
+									p Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam.
+									p Ulins aliquam massa nisl quis neque. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque.
+									p Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam.
+									p Ulins aliquam massa nisl quis neque. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque.
+									p Ulins aliquam massa nisl quis neque. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque.
+									p Suspendisse gin orci enim.
+								#faq-tab2.tab-pane(role="tabpanel")
+									p This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+								#faq-tab3.tab-pane(role="tabpanel")
+									p This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+					.col-md-6.col-sm-6.col-xs-12
+						.box-title.clearfix
+							.rate-left.pull-left
+								h4 Overall Rating
+							.rate-right.pull-right
+								.star-rating
+									i.icon-star
+									i.icon-star
+									i.icon-star
+									i.icon-star
+									i.icon-star
+								span.value 5/5
+						.comment-wrapper.clearfix
+							.comment-block.clearfix
+								.thumbnail-wrapper
+									img(src="images/avatar.png", alt="").img-responsive
+								.comment-content
+									.comment-header
+										a(href="#").author Lejla Fizovic
+										.meta Reviewed On 26/01/2017
+										.rating-wrapper
+											.star-rating
+												i.icon-star
+												i.icon-star
+												i.icon-star
+												i.icon-star
+												i.icon-star
+											span.value 5/5
+									.description
+										p You have to be crazy about adventure tours to build a theme that displays the tours so elegantly that a person browsing the tours on site literally falls in love with place even before booking the tour.
+ 
+							h3 LEAVE YOUR COMMENT
+							#comment-frm-wrapper
+								.gf_browser_chrome.gform_wrapper
+									form#gform_1(method="post", enctype="multipart/form-data", action="/form-page/")
+										.gform_body
+											ul#gform_fields_1.gform_fields.top_label.form_sublabel_below.description_below
+												li#field_1_1.gfield.field_sublabel_below.field_description_below.gfield_visibility_visible
+													label.gfield_label(for="input_1_1") Name
+													.ginput_container.ginput_container_text
+														input#input_1_1.medium(name="input_1", type="text", value="", tabindex="1", aria-invalid="false", placeholder="Name")
+												li#field_1_2.gfield.field_sublabel_below.field_description_below.gfield_visibility_visible
+													label.gfield_label(for="input_1_2") Email Address
+													.ginput_container.ginput_container_text
+														input#input_1_2.medium(name="input_2", type="email", value="", tabindex="2", aria-invalid="false", placeholder="Email Address*")
+												li#field_1_4.gfield.field_sublabel_below.field_description_below.gfield_visibility_visible
+													label.gfield_label(for="input_1_4") Rating
+													.ginput_container.ginput_container_text
+														input#input_1_4.medium(name="input_4", type="text", value="", tabindex="1", aria-invalid="false", placeholder="Rating")
+												li#field_1_3.gfield.field_sublabel_below.field_description_below.gfield_visibility_visible
+													label.gfield_label(for="input_1_3") Website
+													.ginput_container.ginput_container_text
+														input#input_1_3.medium(name="input_3", type="text", value="", tabindex="1", aria-invalid="false", placeholder="Website")
+												li#field_1_5.gfield.field_sublabel_below.field_description_below.gfield_visibility_visible
+													label.gfield_label(for="input_1_5") Message
+													.ginput_container.ginput_container_textarea
+														textarea#input_1_2.textarea.medium(name="input_2", tabindex="2", aria-invalid="false", rows="6", cols="50", placeholder="Message")
+										.gform_footer.top_label
+											input#gform_submit_button_1.gform_button.button(type="submit", value="POST YOUR COMMENT", tabindex="13")
+			#gallery.tab-pane(role="tabpanel")
+				ul.row.gallery-list
+					mixin galleryItem(imgUrl)
+						li.col-md-4.col-sm-4.col-xs-6
+							a(href=imgUrl, data-fancybox="group")
+								img(src=imgUrl, alt="").img-responsive
+								.caption-wrapper
+									.caption-inner
+										h5 Gallery 09
+										span.sub-text Lorem ipsum dolor sit amet, consectetur adipisicing elit
+
+					+galleryItem("images/gallery-01.jpg")
+					+galleryItem("images/gallery-02.jpg")
+					+galleryItem("images/gallery-03.jpg")
+					+galleryItem("images/gallery-03.jpg")
+					+galleryItem("images/gallery-01.jpg")
+					+galleryItem("images/gallery-02.jpg")
+
+	section.content-block.recent-viewed-section.grey-bg
+		.container
+			header.content-header
+				h2.main-title RECENTLY VIEWED
+				span.sub-title We have a unique way of meeting your adventurous expectations!
+			.content-wrapper.row
+				mixin postIemStyle3(imgUrl)
+					.col-lg-3.col-md-4.col-sm-4.col-xs-12
+						article.post-item.style3
+							h3.post-title: a(href="#") City Tours in Europe
+							.post-activity
+								a(href="#") Jungle
+								a(href="#") Mountain
+								a(href="#") Rural
+							.thumbnail-wrapper
+								img(src=imgUrl, alt="").img-responsive
+								ul.addition-info
+									li: img(src="images/sale-badge.png", alt="Sale off")
+							footer
+								.info-left.icons-list
+									i(title="Europe").icon-europe
+									i(title="Mountain").icon-mountain
+									i(title="Mountain-biking").icon-mountain-biking
+								.info-right
+									span 9 Hours
+									.price
+										del.old-price $799
+										span.discounted-price $599
+					// End post-item
+
+				+postIemStyle3("images/img01-550x358.jpg")
+				+postIemStyle3("images/img01-550x358.jpg")
+				+postIemStyle3("images/img01-550x358.jpg")
+				+postIemStyle3("images/img01-550x358.jpg")

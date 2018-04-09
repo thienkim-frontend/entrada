@@ -1,0 +1,6 @@
+node_modules/*
+public/*
+bootstrap-3.3.7-dist
+
+.sass-cache
+bower_components

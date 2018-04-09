@@ -1,0 +1,199 @@
+$theme: wanderlust;
+
+$title-font: 'Roboto Condensed'; 
+$subTitle-font: 'Shadows Into Light Two'; 
+$body-font: 'Montserrat', Helvetica, Arial, sans-serif;
+$iconfont: 'Wanderlust Icons';
+
+$base-fontsize: 13px;
+$sm-fontsize: 0.875em; // 14px
+$md-fontsize: 1.125em; // 18px
+$lg-fontsize: 5rem; // 70px
+
+$icon-lg: 3em;
+$icon-sm: 0.75em;
+$social-icon: #848484;
+
+// $highlight-color: #25aae1; 
+$highlight-color: #ff7550; 
+$white: #ffffff;
+$black: #000000;
+
+$base-txt: #5c5e62;
+$dark-txt: #4d4e53;
+$grey-txt: #9d9d9d;
+$grey-dark: #4b4b4b;
+$grey-light: #c1c5cd;
+$grey-lighter: #f8f8f8;
+$link-txt:  #5c5e62;
+$link-hover: #444;
+$nav-txt: #f8f8f8;
+$nav-bg: #f8f8f8;
+
+$grey-level1: #5c5e62;
+
+$black-light: #252525;
+
+$rating-color: #fec13f;
+
+$default-border-radius: 1.5em; 
+
+$image: "../images";
+
+
+ @mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (min-width: 70em) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (min-width: 64em) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (min-width: 50em) { @content ; }
+  }
+   @else if $point == phablet {
+     @media (min-width: 37.5em)  { @content ; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 37.5em)  { @content ; }
+
+  }
+}
+// logo color
+
+$yellow: #fec13f; 
+$grey: #818285; 
+
+$green: #b1ca64;
+$pink: #cc6699;
+$purple: #8224e3;
+
+$color-btn: darken($highlight-color, 30%); 
+
+$category1: travel;
+$category2: photography;
+$category3: business;
+$category4: sports;
+$category5: fashion;
+
+$category: (
+  $category1: ($highlight-color, $white),
+  $category2: ($green, $white),
+  $category3: ($yellow, $white),
+  $category4: ($pink, $white),
+  $category5: ($purple, $white)
+);
+
+@each $name, $colors in $category {
+  $fontcolor: nth($colors, 1);
+  $bgcolor: nth($colors, 2);
+   
+  %#{$name} {
+    // background-color: $bgcolor;
+    color: $fontcolor;
+  } 
+  .category-#{$name}{
+    .category-link{
+      text-transform: capitalize;
+      @extend %#{$name};
+    }
+  } 
+  .main-content-wrapper .full-width.category-#{$name}{
+    .category-link:after{
+        background-color: $fontcolor;
+    } 
+    h2 a:hover, .post-title a:hover{
+      @extend %#{$name};
+    }
+  }
+  
+}
+
+
+
+%link-hover-default{
+  a:hover{
+    color: $highlight-color;
+  }
+}
+%link-hover-black{
+  a:hover{
+    color: $black!important;
+  }
+}
+%main-color{
+  color: $highlight-color;
+}
+
+%title-line{
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+  &:after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 40px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.5);
+    left: 50%;
+    margin-left: -20px;
+  }
+}
+
+%title-line-style2{
+  &:after{
+    position: relative;
+    display: block;
+    content: "";
+    height: 1px;
+    width: 120px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background: $highlight-color;
+  }
+  
+  &.align-center{
+    text-align: center;
+    &:after{
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+/* Usage: @include centerer(false, true); */
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+/* Usage: @include center(); */
+@mixin center($option: both) {
+  position: absolute;
+  @if ($option == "both") {
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    left: 0;
+    transform: translate(-0, -50%);
+  } @else if ($option == "horizontal") {
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($option == "vertical") {
+    width: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}

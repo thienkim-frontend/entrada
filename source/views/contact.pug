@@ -1,0 +1,72 @@
+//- extends layout to your side
+extends layout/layout
+
+block var
+	- subPage = "wanderlust-contact-page";
+	- title = "Contact page";
+block content
+	// Start main-content section
+	section.hero-section(data-parallax="scroll" data-image-src="images/contact-bg.jpg")
+		.container.hero-inner
+			h1 Contact Us
+			strong.sub-title The most detailed and modern Adventure Theme ever!
+
+			ol.breadcrumb
+				li
+					a(href="#") Home
+				li
+					a(href="#") PAGES
+				li.active CONTACT
+	section.content-block.feature-section.grey-bg
+		.container
+			header.content-header
+				h2.main-title GET IN TOUCH
+				span.sub-title Contact us by email, phone or through our web form below.
+
+			.content-wrapper.row
+				.col-md-4.col-sm-4.col-xs-12.contact-info-block
+					.tel-block.has-border
+						i.icon-tel-big
+						a(href="tel:02085775771") 020 8577 5771
+					h3 Booking Enquiries
+					p This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit
+				.col-md-4.col-sm-4.col-xs-12.contact-info-block
+					.tel-block.has-border
+						i.icon-tel-big
+						a(href="tel:02085777777") 020 8577 7777
+					h3 Post Booking Questions
+					p This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit
+				.col-md-4.col-sm-4.col-xs-12.contact-info-block
+					.tel-block.has-border
+						i.icon-fax-big
+						a(href="tel:02085778787")  020 8577 8787
+					h3 Payment Queries
+					p This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit
+				
+			.row
+				.col-md-6.col-sm-6.col-xs-12
+					.contact-frm-wrapper
+						.gf_browser_chrome.gform_wrapper
+							form#gform_1(method="post", enctype="multipart/form-data", action="/form-page/")
+								.gform_body
+									ul#gform_fields_1.gform_fields.top_label.form_sublabel_below.description_below
+										li#field_1_1.gfield.field_sublabel_below.field_description_below.gfield_visibility_visible
+											label.gfield_label(for="input_1_1") Name
+											.ginput_container.ginput_container_text
+												input#input_1_1.medium(name="input_1", type="text", value="", tabindex="1", aria-invalid="false", placeholder="")
+										li#field_1_2.gfield.field_sublabel_below.field_description_below.gfield_visibility_visible
+											label.gfield_label(for="input_1_2") Email Address
+											.ginput_container.ginput_container_text
+												input#input_1_2.medium(name="input_2", type="email", value="", tabindex="2", aria-invalid="false", placeholder="")
+										li#field_1_3.gfield.field_sublabel_below.field_description_below.gfield_visibility_visible
+											label.gfield_label(for="input_1_3") Subject
+											.ginput_container.ginput_container_text
+												input#input_1_3.medium(name="input_3", type="text", value="", tabindex="1", aria-invalid="false", placeholder="")
+										li#field_1_5.gfield.field_sublabel_below.field_description_below.gfield_visibility_visible
+											label.gfield_label(for="input_1_5") Message
+											.ginput_container.ginput_container_textarea
+												textarea#input_1_5.textarea.medium(name="input_2", tabindex="2", aria-invalid="false", rows="6", cols="50", placeholder="")
+								.gform_footer.top_label
+									input#gform_submit_button_1.gform_button.button(type="submit", value="Send Enquiry", tabindex="13")
+				.col-md-6.col-sm-6.col-xs-12
+					#wanderlust-google-map

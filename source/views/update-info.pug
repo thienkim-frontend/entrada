@@ -1,0 +1,129 @@
+doctype html
+a(class='button' href='google.com') Google
+a(class='button', href='google.com') Google
+
+div(class='div-class' '(click)'='play()')
+div(class='div-class', (click)='play()')
+
+- var authenticated = true
+body(class=authenticated ? 'authed' : 'anon')
+
+input(
+  type='checkbox'
+  name='agreement'
+  checked
+)
+
+//- Since literal HTML tags do not get processed, they do not self-close, unlike Pug tags
+<p data-content="<img src='../images/01.jpg'">Pure HTML</p>
+
+//- Tag Interpolation
+p
+  | If I don't write the paragraph with tag interpolation, tags like
+  strong strong
+  | and
+  em em
+  | might produce unexpected results.
+//- Block in a Tag - add '.' right after the tag name, or after the closing parenthesis, if the tag has attributes
+p.
+  If I do, whitespace is #[strong respected] and #[em everybody] is happy.
+
+- var url = 'pug-test.html';
+a(href='/' + url) Link
+a(href=`/${url}`) ES6
+//- don't support a(href="/#{url}") Link
+
+div(data-html!="<code>")
+
+a(style={color: 'red', background: 'green'})
+
+- var classes = ['foo', 'bar', 'baz']
+//- the class attribute may also be repeated to merge arrays
+a.bang(class=classes class=['bing'])
+
+- var currentUrl = '/about';
+a(class={active: currentUrl === '/'} href='/') Home
+|
+|
+a(class={active: currentUrl === '/about'} href='/about') About
+
+div#foo(data-bar="foo")&attributes({'data-foo': 'bar'})
+
+- var friends = 1
+case friends
+  when 0
+    - break
+  when 1
+  when 2
+    p you have very few friends
+  default: p you have #{friends} friends
+
+-
+  var list = [
+    "Uno", 
+    "Dos", 
+    "Tres"]
+each item in list.length ? list : ['There are no values']
+  li= item
+
+- var values = [];
+ul
+  each val in values
+    li= val
+  else
+    li There are no values
+
+ul
+  each val, index in {1:'one',2:'two',3:'three'}
+    li= index + ': ' + val
+
+//- For security, buffered code is first HTML escaped
+p= 'This code is' + ' <escaped>!'
+p!= 'This code is <strong>not</strong> escaped!'
+p This code is <strong>not</strong> escaped!
+
+// just some paragraphs
+<!--[if IE 8]>
+<html lang="en" class="lt-ie9">
+<![endif]-->
+
+- var user = { description: 'foo bar baz' }
+- var authorised = false
+#user
+  if user.description
+    p.description= user.description
+  else if authorised
+    p.description.
+      User has no description, 
+      why not add one...
+  else
+    p.description User has no description
+
+  unless authorised
+    p.description.
+      User has no description, 
+      why not add one...
+
+- var n = 0;
+ul
+  while n < 4
+    li= n++
+
+//- an unknown number of arguments using the “rest arguments” syntax
+mixin article(title, ...items)
+  //- The values in attributes by default are already escaped! You should use != to avoid escaping them a second time
+  .article(class!=attributes.class)
+    .article-wrapper&attributes(attributes)
+      h1= title
+      ul
+        each item in items
+          li= item
+      if block
+        block
+      else
+        p No content provided
+
++article('Hello world', "Uno", "Dos", "Tres")(class="style1")
++article('Hello world')
+  p This is my
+  p Amazing article

@@ -1,0 +1,87 @@
+// Start header-section
+header.header-section
+  .container-fluid
+    nav
+      .logo-wrapper
+        a.navbar-logo(href="#", title="Wanderlust") 
+          img(src="images/logo-white.png", alt="Wanderlust").img-responsive.hideOnScroll.hidden-xs
+          img(src="images/logo-grey.png", alt="Wanderlust").img-responsive.showOnScroll
+      button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#wanderlust-navbar", aria-expanded="false")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+      #wanderlust-navbar.collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-11
+            a(href="destination.html") DESTINATION
+          li.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-12.menu-item-has-children.current-menu-item
+            a(href="#") ACTIVITIES
+            ul.sub-menu
+              li.menu-item.menu-item-type-post_type.menu-item-object-page
+                a(href="post-standard.html") Post Standard
+              li.menu-item.menu-item-type-post_type.menu-item-object-page.current-menu-item
+                a(href="post-gallary.html") Post Gallary
+              li.menu-item.menu-item-type-post_type.menu-item-object-page
+                a(href="post-video.html") Post Video
+          li.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-13
+            a(href="#") BOOKINGS
+          li.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-14.new-column
+            a(href="contact.html") CONTACT
+          li.menu-item.menu-item-type-custom.menu-item-object-custom
+            a(href="blog.html") BLOG
+
+        ul.navbar-right
+          li
+            a(href="#"): i.icon.icon-user
+          li
+            a(href="#") 
+              i.icon.icon-cart
+              span.cart-count 0
+          li
+            a(href="#header-search-frm", data-fancybox): i.icon.icon-search
+
+      #header-search-frm
+        form(action="#").search-frm
+          .col-md-4.col-sm-6.col-xs-12
+            label Departing
+            .input-group.datepicker
+              input(type="text", placeholder="", name="start_date").form-control#start_date
+              span.input-group-addon: i.icon-drop
+          .col-md-4.col-sm-6.col-xs-12
+            label Returning
+            .input-group.datepicker
+              input(type="text", placeholder="", name="end_date").form-control#end_date
+              span.input-group-addon: i.icon-drop
+          .col-md-4.col-sm-6.col-xs-12
+            label Select region
+            .select-wrapper
+              select(name="select-region", data-selectCustom).form-control#select-region
+                option(value="") Select Regions
+                option(value="") Any Region
+                option(value="africa")  Africa
+                option(value="asia")  Asia
+                option(value="europe")  Europe
+                option(value="world")  World
+          .col-md-4.col-sm-6.col-xs-12
+            label Select Activity
+            .select-wrapper
+              select(name="select-activity", data-selectCustom).form-control#select-activity
+                option(value="") Select Activity
+                option(value="") Any Activity
+                option(value="beach")  Beach
+                option(value="bungee-jump")  Bungee Jump
+                option(value="city-tours")  City Tours
+          .col-md-4.col-sm-6.col-xs-12
+            label Price Range
+            .select-wrapper
+              select(name="price-range", data-selectCustom).form-control#price-range
+                option(value="") Select Price Range
+                option(value="") Any Price Range
+                option(value="0-500") 0 - 500
+                option(value="501-1000") 501 - 1000
+                option(value="1001-1500") 1001 - 1500
+          .col-md-4.col-sm-6.col-xs-12
+            button  Find Tours
+// End header-section

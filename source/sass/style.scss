@@ -1,0 +1,30 @@
+// http://compass-style.org/reference/compass/css3/
+// @import "compass/reset";
+@import "compass/css3";
+@import "_variables";
+@import "_fontface";
+@import "_general";
+@import "_animation";
+@import "_plugin";
+@import "layout/_menu";
+@import "layout/_footer";
+// @import "_layout";
+@import "_home";
+@import "_detail-post";
+@import "_search";
+@import "_responsive";
+// @import "_editor";
+
+
+/*
+Theme Name: Entrada
+Theme URI: http://www.waituk.com/entrada
+Author: WAITUK
+Author URI: http://www.waituk.com
+Description: Clean, modern, and responsive WordPress adventure theme by WAITUK
+Version: 3.0.0
+License: Themeforest Regular License
+License URI: http://themeforest.net/licenses/standard
+Text Domain: entrada
+Tags: two-columns, three-columns, four-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-colors, custom-menu, featured-images, microformats, translation-ready
+*/

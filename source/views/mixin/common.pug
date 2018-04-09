@@ -1,0 +1,155 @@
+mixin postIemSearch(imgUrl)
+  article.post-item.layout-list
+    .post-inner
+      .thumbnail-wrapper
+        img(src=imgUrl, alt="").img-responsive
+        ul.addition-info
+          li: img(src="images/sale-badge.png", alt="Sale off")
+      .main-block
+        h3.post-title: a(href="#") Urban City Tour In Paris
+        span.consumed-time 18 Days
+        .post-activity
+          a(href="#") Jungle
+          a(href="#") Mountain
+          a(href="#") Rural
+        ul.post-meta
+          li.country 
+            i.icon-world
+            | 19 Countries
+          li.activity-count
+            i.icon-acitivities
+            | 3 Activities
+        .description
+          p Son agreed others exeter period myself few yet nature. Mention mr manners opinion if garrets enabled. To an occasional dissimilar impossible sentiments.
+          a(href="#").button-default explore
+        .rating-wrapper
+          .star-rating
+            i.icon-star
+            i.icon-star
+            i.icon-star
+            i.icon-star
+            i.icon-star
+          span.value Based on 2 Reviews
+        footer
+          ul.icons-list
+            li: i(title="Europe", data-toggle="tooltip").icon-europe
+            li: i(title="Mountain", data-toggle="tooltip").icon-mountain
+            li: i(title="Mountain-biking", data-toggle="tooltip").icon-mountain-biking
+          ul.action-icons
+            li.has-dropdown-menu
+              a(href="#"): i.icon-share
+              ul.dropdown-social-share
+                li: a(href="#", title="Facebook") 
+                  i.icon-facebook
+                  span.text Facebook
+                li: a(href="#", title="Twitter") 
+                  i.icon-twitter
+                  span.text Twitter
+                li: a(href="#", title="Google plus")
+                  i.icon-google-plus
+                  span.text Google plus
+                li: a(href="#", title="Pinterest") 
+                  i.icon-pin
+                  span.text Pinterest
+            li
+              a(href="#"): i.icon-favs
+      .aside-block
+        .info-right.social-networks
+          a(href="#", title="Facebook"): i.icon-facebook
+          a(href="#", title="Twitter"): i.icon-twitter
+          a(href="#", title="Google plus"): i.icon-google-plus
+          a(href="#", title="Pinterest"): i.icon-pin
+        .info-left.price from <br/>
+          del.old-price $799
+          span.discounted-price $599
+        .activity-level
+          i.icon-level7
+          span.text Extreme
+        a(href="#").button-default explore
+
+
+  // End POST-ITEM
+
+mixin postIemStyle4(imgUrl)
+  article.post-item.full-width
+    .thumbnail-wrapper
+      img(src=imgUrl, alt="").img-responsive
+      ul.addition-info
+        li: img(src="images/sale-badge.png", alt="Sale off")
+    .main-block
+      h3.post-title: a(href="#") Urban City Tour In Paris
+      span.consumed-time 18 Days
+      p Son agreed others exeter period myself few yet nature. Mention mr manners opinion if garrets enabled. To an occasional dissimilar impossible sentiments.
+      .rating-wrapper
+        .star-rating
+          i.icon-star
+          i.icon-star
+          i.icon-star
+          i.icon-star
+          i.icon-star
+        span.value Based on 2 Reviews
+      footer
+        ul.icons-list
+          li: i(title="Europe", data-toggle="tooltip").icon-europe
+          li: i(title="Mountain", data-toggle="tooltip").icon-mountain
+          li: i(title="Mountain-biking", data-toggle="tooltip").icon-mountain-biking
+        ul.action-icons
+          li.has-dropdown-menu
+            a(href="#"): i.icon-share
+            ul.dropdown-social-share
+              li: a(href="#", title="Facebook") 
+                i.icon-facebook
+                span.text Facebook
+              li: a(href="#", title="Twitter") 
+                i.icon-twitter
+                span.text Twitter
+              li: a(href="#", title="Google plus")
+                i.icon-google-plus
+                span.text Google plus
+              li: a(href="#", title="Pinterest") 
+                i.icon-pin
+                span.text Pinterest
+          li
+            a(href="#"): i.icon-favs
+    .aside-block
+      .price from <br/>
+        del.old-price $799
+        span.discounted-price $599
+      .activity-level
+        i.icon-level7
+        span.text Extreme
+      a(href="#").button-default explore
+  // End POST-ITEM
+
+
+mixin postIem(imgUrl)
+  article.post-item.style1&attributes(attributes)
+    .thumbnail-wrapper
+      img(src=imgUrl, alt="").img-responsive
+      ul.addition-info
+        li: img(src="images/sale-badge.png", alt="Sale off")
+    h3.post-title: a(href="#") Urban City Tour In Paris
+    .post-activity
+      a(href="#") Jungle
+      a(href="#") Mountain
+      a(href="#") Rural
+    ul.post-meta
+      li.country 
+        i.icon-world
+        | 19 Countries
+      li.activity-count
+        i.icon-acitivities
+        | 3 Activities
+    .description
+      p Son agreed others exeter period myself few yet nature. Mention mr manners opinion if garrets enabled. To an occasional dissimilar impossible sentiments.
+      a(href="#").button-default explore
+    footer
+      .info-right.social-networks
+        a(href="#", title="Facebook"): i.icon-facebook
+        a(href="#", title="Twitter"): i.icon-twitter
+        a(href="#", title="Google plus"): i.icon-google-plus
+        a(href="#", title="Pinterest"): i.icon-pin
+      .info-left.price from <br/>
+        del.old-price $799
+        span.discounted-price $599
+  // End POST-ITEM

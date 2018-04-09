@@ -1,0 +1,168 @@
+/*==========  Mobile First Method / Bootstrap 3 Media Queries ==========*/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+		
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+}
+
+@media only screen and (max-width : 767px) {
+	%font-h2-lg{
+
+	}
+	%font-h2-xs{
+		font-size: 30px;
+	}
+	%font-subtile-xs{
+		font-size: 18px;
+	}
+	
+	.destination-section > .container{
+		padding: 0;
+	}
+	.hero-section{
+		h1{ @extend %font-h2-xs; }
+		strong, .sub-title{
+			@extend %font-subtile-xs;
+		}
+		.search-frm{
+			.col-xs-12{
+				margin-bottom: 10px;
+			}
+			.wanderlust-btn{
+				margin-top: 20px;
+			}
+		}
+		.slider-item{
+			.main-title{
+				@extend %font-h2-xs;
+				margin-bottom: 10px;
+			}
+			.sub-title{
+				@extend %font-subtile-xs;
+			}
+			.caption-wrapper{
+				top: 38%;
+			} 
+		}
+	}
+	.intro-section .icon-wrapper img{ margin: 0 auto;}
+	.style1.post-item{
+		margin: 0;
+	}
+	.img-article{
+		margin-bottom: 15px;
+	}
+	.footer-bottom .payment-option li{
+		padding: 0 5px;
+	}
+	.widget-wrapper{
+		padding: 30px 0;
+	}
+	.footer-bottom{
+		text-align: center;
+	}
+	.widget-wrapper h3, .widget-wrapper .widget-title{
+		@extend %font-subtile-xs;
+    margin-bottom: 15px;
+    &:before{
+      position: absolute;
+      right: 0;
+      top: 8px;
+      content: '\e906';
+      font-size: 12px;
+      font-family: $iconfont;
+      transition: transform .2s linear;
+    }
+    &.active{
+      &:before{
+            transform: rotate(180deg);
+      }
+      + .widget-list{
+        max-height: 250px;
+      }
+    }
+	}
+	.widget-list{
+		max-height: 0;
+    margin-bottom: 0;
+		overflow: hidden;
+		transition: all .2s linear;
+		li{ margin-bottom: 0; line-height: 26px; padding-left: 15px;}
+	}
+	.partner-slider a{
+		padding-bottom: 15px;
+		min-height: auto;
+	}
+	.banner-section h4{
+		font-size: 20px;
+		line-height: 30px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+  .intro-section{
+  	margin-bottom: 100px;
+  	.intro-block{
+  		margin-top: 100px;
+  	}
+  	.info-block{
+  		margin-top: -100px;
+  	}
+  }
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	.img-article h4, .img-article .guide-name{
+		font-size: 22px;
+	}
+}
+
+@media only screen and (min-width : 960px) {
+	
+}
+@media only screen and (min-width : 768px) and (max-width : 991px){
+	.destination-section>.container{
+		width: 100%;
+		padding: 0;
+	}
+	.hero-section.full-height, .hero-section .slider-item{
+    height: 600px;
+  }
+  .widget-wrapper{
+  	padding: 30px 0;
+  	h3, .widget-title{
+  		font-size: 18px;
+  	}
+  }
+	
+	.footer-bottom .payment-option li{
+		padding: 0 5px;
+	}
+	.intro-section .intro-block{
+		margin-top: 15px;
+	}
+	#wanderlust-google-map {
+	    height: 493px;
+	}
+	.recent-viewed-section .content-wrapper > .col-sm-4:nth-of-type(4n){
+		display: none;
+	}
+}
+@media only screen and (min-width : 992px) and (max-width : 1199px){
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+	
+}

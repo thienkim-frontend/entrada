@@ -1,0 +1,213 @@
+//- extends layout to your side
+extends layout/layout
+
+block var
+	- subPage = "wanderlust-home-page";
+	- title = "Home page";
+block content
+	// Start Slider section
+	section.hero-section.full-height
+		.hero-slider.owl-carousel
+			.slider-item(style="background-image: url(./images/slider/slider01.jpg)")
+				.caption-wrapper
+					.container
+						h3.main-title.animation(data-animation="fadeInDown", data-delay="1s") Your Dream Escape
+						span.sub-title.animation(data-animation="fadeInDown", data-delay="1s") only a quick search away
+			.slider-item(style="background-image: url(./images/slider/slider02.jpg)")
+				.caption-wrapper
+					.container
+						h3.main-title.animation(data-animation="fadeInDown", data-delay="1s") A Perfect Adventure
+						span.sub-title.animation(data-animation="fadeInDown", data-delay="1s") memory of a lifetime
+
+		.form-wrapper
+			.container
+				.row
+					form(action="#").search-frm
+						.col-md-3.col-sm-3.col-xs-12
+							label(for="select-region").sr-only Select region
+							select(name="select-region", data-selectCustom).form-control#select-region
+								option(value="") All Destinations
+								option(value="africa")  Africa
+								option(value="asia")  Asia
+								option(value="europe")  Europe
+								option(value="world")  World
+						.col-md-3.col-sm-3.col-xs-12
+							label(for="select-activity").sr-only Select Activity
+							select(name="select-activity", data-selectCustom).form-control#select-activity
+								option(value="") Select Activity
+								option(value="") Any Activity
+								option(value="beach")  Beach
+								option(value="bungee-jump")  Bungee Jump
+								option(value="city-tours")  City Tours
+								option(value="") Any Activity
+								option(value="beach")  Beach
+								option(value="bungee-jump")  Bungee Jump
+								option(value="city-tours")  City Tours
+						.col-md-3.col-sm-3.col-xs-12
+							label(for="select-date").sr-only Select Date
+							select(name="price-range", data-selectCustom).form-control#select-date
+								option(value="") Any Date
+								option(value="1-10-2017") Oct 2017
+								option(value="1-11-2017") Nov 2017
+								option(value="1-12-2017") Dec 2017
+						.col-md-3.col-sm-3.col-xs-12
+							button.wanderlust-btn  Find Tours
+	// End Slider section
+	
+	section.content-block.trend-section.grey-bg
+		.container
+			header.content-header
+				h2.main-title Trending
+				span.sub-title Handpicked tours currently trending…
+			.content-wrapper
+				.trend-slider.owl-carousel.is-simple-carousel(data-sm='{"items":2}', data-md='{"items":3}', data-nav="true")
+					mixin postIem(imgUrl)
+						article.post-item.style1
+							.thumbnail-wrapper
+								img(src=imgUrl, alt="").img-responsive
+								ul.addition-info
+									li: img(src="images/sale-badge.png", alt="Sale off")
+							h3.post-title: a(href="#") Urban City Tour In Paris
+							.post-activity
+								a(href="#") Jungle
+								a(href="#") Mountain
+								a(href="#") Rural
+							ul.post-meta
+								li.country 
+									i.icon-world
+									| 19 Countries
+								li.activity-count
+									i.icon-acitivities
+									| 3 Activities
+							.description
+								p Son agreed others exeter period myself few yet nature. Mention mr manners opinion if garrets enabled. To an occasional dissimilar impossible sentiments.
+								a(href="#").button-default explore
+							footer
+								.info-right.social-networks
+									a(href="#", title="Facebook"): i.icon-facebook
+									a(href="#", title="Twitter"): i.icon-twitter
+									a(href="#", title="Google plus"): i.icon-google-plus
+									a(href="#", title="Pinterest"): i.icon-pin
+								.info-left.price from <br/>
+									del.old-price $799
+									span.discounted-price $599
+						// End POST-ITEM
+					
+					+postIem("images/img01-550x358.jpg")
+					+postIem("images/img02-550x358.jpg")
+					+postIem("images/img03-550x358.jpg")
+					+postIem("images/img04-550x358.jpg")
+	// End trend-section
+
+	section.content-block.destination-section
+		.container
+			header.content-header
+				h2.main-title DESTINATIONS
+				span.sub-title Trending destinations OF 2017 in the World!
+			.content-wrapper
+				ul.destination-slider.owl-carousel
+					mixin destinationItem(imgUrl)
+						li.slider-item(style="background-image: url(images/" + imgUrl + ")")
+							.overlay
+								.plus-sign
+							.caption-wrapper
+								.content-inner
+									h3.main-title America
+									span.sub-title breathtaking places
+						// End slider-item
+
+					+destinationItem("destination01.jpg")
+					+destinationItem("destination02.jpg")
+					+destinationItem("destination03.jpg")
+					+destinationItem("destination04.jpg")
+					+destinationItem("destination02.jpg")
+	// End destination-section
+
+	section.content-block.popular-tour-section
+		.container
+			header.content-header
+				h2.main-title Popular Tours
+				span.sub-title We have a unique way of meeting your adventurous expectations!
+			.content-wrapper.row
+				mixin postIemStyle2(imgUrl)
+					article.post-item.style2.col-md-4.col-sm-6.col-xs-12
+						.thumbnail-wrapper
+							img(src=imgUrl, alt="").img-responsive
+							.img-caption JUNGLE SAFARIS
+							.overlay
+								.star-rating
+									i.icon-star
+									i.icon-star
+									i.icon-star
+									i.icon-star
+									i.icon-star
+								.action-icons
+									a(href="#"): i.icon-favs
+									a(href="#"): i.icon-reply
+								.price from <br/>
+									del.old-price $799
+									span.discounted-price $599
+								a(href="#").btn.btn-default explore
+						h3.post-title: a(href="#") City Tours in Europe
+						.description
+							p Son agreed others exeter period myself few yet nature. Mention mr manners opinion if garrets enabled. To an occasional dissimilar impossible sentiments.
+					// End post-item
+
+				+postIemStyle2("images/img01-550x358.jpg")
+				+postIemStyle2("images/img02-550x358.jpg")
+				+postIemStyle2("images/img03-550x358.jpg")
+				+postIemStyle2("images/img04-550x358.jpg")
+				+postIemStyle2("images/img05-550x358.jpg")
+				+postIemStyle2("images/img01-550x358.jpg")
+	// End popular-tour-section
+	
+	section.content-block.banner-section(data-parallax="scroll" data-image-src="images/banner.jpg")
+		.container
+			h4 Get special discount on select treks, this week. <strong>Call +1 5775 7525</strong>
+	// End popular-tour-section
+
+	section.content-block.guide-section
+		.container
+			header.content-header
+				h2.main-title MEET THE GUIDES
+				span.sub-title Our highly trained and efficient guides at your service
+			.content-wrapper.row
+				mixin imgArticle(imgUrl)
+					article.col-md-4.col-sm-4.col-xs-12.img-article
+						.thumbnail-wrapper
+							img(src=imgUrl, alt="").img-responsive
+							.overlay
+								.social-networks
+									a(href="#", title="Facebook"): i.icon-facebook
+									a(href="#", title="Twitter"): i.icon-twitter
+									a(href="#", title="Google plus"): i.icon-google-plus
+						.img-caption
+							h4.guide-name Jason Stratham
+							span.positon TOURISM EXPERT
+					// End img-article
+
+				+imgArticle("images/team.jpg")
+				+imgArticle("images/team.jpg")
+				+imgArticle("images/team.jpg")
+	// End guide-section
+
+	section.content-block.partner-section.grey-bg
+		.container
+			header.content-header
+				h2.main-title PARTNERS
+				span.sub-title People who always support and endorse our work
+			.content-wrapper
+				.partner-slider.owl-carousel.is-simple-carousel(data-xs='{"items":3}', data-sm='{"items":4}', data-md='{"items":6}')
+					.slider-item
+						a(href="#", target="_blank", title=""): img(src="images/partner/partner-01.png", alt="").img-responsive
+					.slider-item
+						a(href="#", target="_blank", title=""): img(src="images/partner/partner-02.png", alt="").img-responsive
+					.slider-item
+						a(href="#", target="_blank", title=""): img(src="images/partner/partner-01.png", alt="").img-responsive
+					.slider-item
+						a(href="#", target="_blank", title=""): img(src="images/partner/partner-03.png", alt="").img-responsive
+					.slider-item
+						a(href="#", target="_blank", title=""): img(src="images/partner/partner-01.png", alt="").img-responsive
+					.slider-item
+						a(href="#", target="_blank", title=""): img(src="images/partner/partner-04.png", alt="").img-responsive
+	// End partner-section
